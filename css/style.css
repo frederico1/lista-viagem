@@ -1,0 +1,263 @@
+html {
+  background-color: #74ebd5;
+  background-image: linear-gradient(180deg, #74ebd5 0%, #9face6 100%);
+  height: 100%;
+  font-family: 'Roboto', cursive;
+}
+
+h1 {
+  text-align: center;
+}
+
+.adicionar {
+  width: 100%;
+}
+
+.adicionar input {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.5em 0 1em;
+  padding: 1em 0.5em;
+  border-radius: 10px;
+  border: 2px solid #469c60;
+}
+
+.adicionar label {
+  display: block;
+}
+
+label {
+  color: #000;
+}
+
+button {
+  padding: 0.9em 1.9em;
+  font-size: 12px;
+  border: none;
+  background: #6285f8;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+button:hover {
+  color: rgb(255, 255, 255);
+}
+
+button::before,
+button::after {
+  content: '';
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background: rgba(128, 128, 128, 0.096);
+  backdrop-filter: blur(10px);
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+button::after {
+  z-index: -2;
+  transition: all 0.4s;
+}
+
+button:hover::before {
+  background: rgb(0, 0, 0, 0.315);
+  border-radius: 10px;
+}
+
+button:hover::after {
+  background: linear-gradient(to right, #cb6ce6, #38b6ff);
+  border-radius: 10px;
+  transform: scale(1.07, 1.2) rotateX(180deg);
+}
+
+.cadastrar {
+  background-color: #469c60;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.lista {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80vw;
+  padding: 2rem;
+}
+
+.item {
+  list-style: none;
+  padding: 0.6em 2em;
+  background: #ffffff;
+  border-radius: 10px;
+  margin: 0 0 1em;
+  width: 100%;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 20px;
+}
+
+.item strong {
+  border-radius: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #649ec5;
+  font-weight: 400;
+}
+
+/* From uiverse.io by @WhiteNervosa */
+.textInputWrapper {
+  position: relative;
+  width: 180px;
+  margin: 12px 5px;
+  --accent-color: #a3e583;
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:before,
+.textInputWrapper:after {
+  content: '';
+  left: 0;
+  right: 0;
+  position: absolute;
+  pointer-events: none;
+  bottom: -1px;
+  z-index: 4;
+  width: 100%;
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.textInputWrapper:before {
+  transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.textInputWrapper:focus-within:before {
+  border-bottom: 1px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:focus-within:after {
+  border-bottom: 2px solid var(--accent-color);
+  transform: scaleX(1);
+}
+
+.textInputWrapper:after {
+  content: '';
+  transform: scaleX(0);
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  will-change: transform;
+  border-bottom: 2px solid var(--accent-color);
+  border-bottom-color: var(--accent-color);
+}
+
+.textInput::placeholder {
+  transition: opacity 250ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  opacity: 1;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.582);
+}
+
+.textInputWrapper .textInput {
+  border-radius: 5px 5px 0px 0px;
+  box-shadow: 0px 2px 5px rgb(35 35 35 / 30%);
+  max-height: 36px;
+  background-color: #252525;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 200ms;
+  transition-property: background-color;
+  color: #e8e8e8;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px;
+  width: 100%;
+  border-left: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  outline: none;
+}
+
+.textInputWrapper:focus-within .textInput,
+.textInputWrapper .textInput:focus,
+.textInputWrapper .textInput:active {
+  background-color: #353535;
+}
+
+.textInputWrapper:focus-within .textInput::placeholder {
+  opacity: 0;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  transform: translateX(-25px);
+  /* Compensating for the left of 50px in the keyframe. */
+}
+
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  animation: rotate9 1s infinite cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.loader::before {
+  background-color: #fc3f9e;
+}
+
+.loader::after {
+  background-color: #6285f8;
+  animation-delay: 0.5s;
+}
+
+@keyframes rotate9 {
+  0%,
+  100% {
+    left: 50px;
+  }
+
+  25% {
+    transform: scale(0.3);
+  }
+
+  50% {
+    left: 0;
+  }
+
+  75% {
+    transform: scale(1);
+  }
+}
+.conteudo {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
